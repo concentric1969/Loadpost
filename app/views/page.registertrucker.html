@@ -271,25 +271,38 @@
                 
                 	<div class="col-7 pull-left" style="text-align:left; padding-left:10px;">
                 		
-                  
-                     <div class="radio-inline c-radio">
+                  		<div class="radio-inline c-radio">
                         <label>
-                           <input id="carrierloadsview" type="radio" name="i-radio" value="carrierview-state" checked="checked" />
+                           <input id="carrierloadsview" type="radio" name="i-radio" value="0" onclick="showhidediv(this);" />
+                           <span class="fa fa-circle"></span>Local Radius</label></div>
+                     	<div class="radio-inline c-radio">
+                        <label>
+                           <input id="carrierloadsview" type="radio" name="i-radio" value="1" onclick="showhidediv(this);" />
                            <span class="fa fa-circle"></span>By State</label></div>
-                     <div class="radio-inline c-radio">
+                     	<div class="radio-inline c-radio">
                         <label>
-                           <input id="carrierloadsview" type="radio" name="i-radio" value="carrierview-region" />
+                           <input id="carrierloadsview" type="radio" name="i-radio" value="2" onclick="showhidediv(this);" />
                            <span class="fa fa-circle"></span>By Region</label></div>
-                     <div class="radio-inline c-radio">
-                        <label>
-                           <input id="carrierloadsview" type="radio" name="i-radio" value="carrierview-local" />
-                           <span class="fa fa-circle"></span>Local Loads Only</label></div>
                      
-                	</div>
+                    </div>
+                    
             	</div>
            </div>
            
-           	<div class="row" style="padding-bottom:10px;">
+           		<!--Hidden DIVs go here -->
+           	<div id="radius" class="col-10 col-centered" style="display:none;">
+           	 	<p class="clearfix">
+      				<span class="pull-left">Miles Radius</span>
+      				<span class="pull-right">Miles:{{range.min}} - {{range.max}}</span>
+            	</p>
+   				<slider ng-model="range.min" ng-model-range="range.max" floor="1" ceiling="100"></slider>
+            </div>
+			
+            <div id="states" style="display:none;">State</div>
+			<div id="region" style="display:none;">Region</div>
+
+           
+           	<div class="row" style="padding:20px 0 10px 0;">
             	<div class="col-md-8 col-centered">
                 	<div class="col-6 body-text-title pull-left" style="text-align:right; padding-top:10px;">
                     	Maximum Weight </div>
@@ -385,3 +398,11 @@
 </div>
 </div>
 
+<script language="JavaScript" type="text/javascript">
+function showhidediv(rad){
+var rads=document.getElementsByName(rad.name);
+document.getElementById('radius').style.display=(rads[0].checked)?'block':'none' ;
+document.getElementById('states').style.display=(rads[1].checked)?'block':'none' ;
+document.getElementById('region').style.display=(rads[2].checked)?'block':'none' ;
+}
+</script>

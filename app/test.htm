@@ -12,21 +12,21 @@
 <script language="JavaScript" type="text/javascript">
 function showhidediv(rad){
 var rads=document.getElementsByName(rad.name);
-document.getElementById('one').style.display=(rads[1].checked)?'block':'none' ;
-document.getElementById('two').style.display=(rads[2].checked)?'block':'none' ;
-document.getElementById('three').style.display=(rads[3].checked)?'block':'none' ;
+document.getElementById('radius').style.display=(rads[0].checked)?'block':'none' ;
+document.getElementById('state').style.display=(rads[1].checked)?'block':'none' ;
+document.getElementById('region').style.display=(rads[2].checked)?'block':'none' ;
 }
 </script>
 
-<form name="create" id="create" method="post" enctype="multipart/form-data">
+<form name="create" id="create" method="post">
 
-<input name="pagetype" type="radio" value="1" onclick="showhidediv(this);"/>One <br />
-<input name="pagetype" type="radio" value="2"  onclick="showhidediv(this);"/>two<br>
-<input name="pagetype" type="radio" value="3"  onclick="showhidediv(this);"/>three<br>
+<input name="pagetype" type="radio" value="0" onclick="showhidediv(this);"/>By Radius <br />
+<input name="pagetype" type="radio" value="1"  onclick="showhidediv(this);"/>By State<br>
+<input name="pagetype" type="radio" value="2"  onclick="showhidediv(this);"/>By Region<br>
 
-<div id="one" class="CF" style="display:none;"  >One </div>
-<div id="two" style="display:none;" class="CF" >Two</div>
-<div id="three" style="display:none;" class="CF" >Three</div>
+<div id="radius"style="display:none;"  >Radius </div>
+<div id="state" style="display:none;">State</div>
+<div id="region" style="display:none;">Region</div>
 
 </form>	
     
