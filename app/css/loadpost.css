@@ -1,0 +1,205 @@
+/* CSS Document */
+
+
+body {
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.52857143;
+  font-weight:400;
+  color: #585f69;
+  background-color: #f0f0f0;
+}
+
+.body-text {
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.52857143;
+  font-weight:400;
+  color: #585f69;
+  padding-bottom:15px;
+}
+
+.body-text-title {
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.52857143;
+  font-weight:bold;
+  color: #585f69;
+  padding-bottom:15px;
+}
+
+.pagetitle{
+	font-size:17px;
+	text-align:center;
+	font-weight:bold;
+	color:#ffffff;
+}
+
+.roundedtop{
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	padding:10px 0 10px 0;
+	background-color:#2095f2;	
+}
+
+.sectionbox1{
+	background-color:#36a4ff;
+	border-radius:10px;
+	padding:10px;
+	margin-bottom:15px;
+}
+
+.sectionbox2{
+	background-color:#090;
+	border-radius:10px;
+	padding:10px;
+	margin-bottom:15px;
+}
+
+.sectiontitle{
+	font-size:17px;
+	text-align:center;
+	font-weight:bold;
+	color:#fff;
+}
+
+.sub-sectiontitle{
+  font-size:17px;
+  text-align:center;
+  font-weight:bold;
+  color:#333;
+}
+
+.sectiontext {
+  font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.52857143;
+  color: #fff;
+  font-weight:bold;
+}
+
+.lppanel {
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 15;
+  border: 0;
+}
+
+
+.text-left{
+	text-align:left;	
+}
+.text-center{
+	text-align:center;
+}
+
+.radius-15 {
+  border-radius: 15px;
+}
+
+.radius-10 {
+  border-radius: 10px;
+}
+
+
+.bg-primary {
+  background-color: #CCC !important;
+  color: #dce0f3;
+}
+
+.bg-primary a {
+  color: #039;
+}
+.bg-primary a:focus,
+.bg-primary a:hover {
+  color: #fefeff;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 45px;
+  padding: 8px 24px;
+  font-size: 14px;
+  line-height: 1.52857143;
+  color: #000;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #dbd9d9;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control-feedback {
+  top: 15px;
+}
+
+.form-control:focus {
+  border-color: #2095f2;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(32, 149, 242, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(32, 149, 242, 0.6);
+}
+.form-control::-moz-placeholder {
+  color: #b7bac9;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #b7bac9;
+}
+.form-control::-webkit-input-placeholder {
+  color: #b7bac9;
+}
+
+.c-checkbox:hover span,
+.c-radio:hover span {
+  border-color: #2095f2;
+}
+
+.c-checkbox input[type=checkbox]:checked + span,
+.c-radio input[type=checkbox]:checked + span,
+.c-checkbox input[type=radio]:checked + span,
+.c-radio input[type=radio]:checked + span {
+  border-color: #2095f2;
+  background-color: #2095f2;
+}
+
+.form-validate .form-control.ng-dirty.ng-invalid {
+    border: 1px solid #f34235;
+}
+
+
+.btn-red {
+	color: #ffffff !important;
+	background-color: #C00E12;
+	border-color: #0C0;
+}
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red.focus,
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  color: #ffffff !important;
+  background-color: #f23022;
+  border-color: #9d0000;
+}
+
+
+
+
+.panel-ltgray > .panel-heading {
+  background-color: #e1e1e1;
+}
+
+

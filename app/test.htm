@@ -1,0 +1,38 @@
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="keywords" content="Load Post,truck driver,load,find a load,shipper,find a shipper">
+   <title>Load Post</title>
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/loadpost.css">
+   <link rel="shortcut icon" href="img/favicon.png">
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+function showhidediv(rad){
+var rads=document.getElementsByName(rad.name);
+document.getElementById('one').style.display=(rads[1].checked)?'block':'none' ;
+document.getElementById('two').style.display=(rads[2].checked)?'block':'none' ;
+document.getElementById('three').style.display=(rads[3].checked)?'block':'none' ;
+}
+</script>
+
+<form name="create" id="create" method="post" enctype="multipart/form-data">
+
+<input name="pagetype" type="radio" value="1" onclick="showhidediv(this);"/>One <br />
+<input name="pagetype" type="radio" value="2"  onclick="showhidediv(this);"/>two<br>
+<input name="pagetype" type="radio" value="3"  onclick="showhidediv(this);"/>three<br>
+
+<div id="one" class="CF" style="display:none;"  >One </div>
+<div id="two" style="display:none;" class="CF" >Two</div>
+<div id="three" style="display:none;" class="CF" >Three</div>
+
+</form>	
+    
+</body>
+
+
+
+
+</html>

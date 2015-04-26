@@ -1,0 +1,79 @@
+<div class="container container-sm animated fadeInDown">
+   <div class="center-block mt-xl">
+      <!-- START panel-->
+      <img src="img/logo.png" alt="Load Post" class="center-block" />
+      <div class="panel radius-15">
+         <div class="panel-body">
+            <p class="sectionbox1 sectiontitle" align="center">WELCOME BACK!</p>
+            
+                      
+            <form role="form" action="#" class="mb-lg form-validate">
+               	<div class="row">
+                  	<div class="col-md-12">
+                  		<div class="col-md-6">
+                     <div class="form-group has-feedback mb">
+                        <input id="login" type="email" placeholder="Username (E-Mail)" autocomplete="off"  class="form-control" autofocus required ng-model="form.email" />
+                         
+                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                     </div>
+                    </div>
+                    	<div class="col-md-6">
+                     <div class="form-group has-feedback">
+                        <input id="password" type="password" placeholder="Your Password" class="form-control" required />
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                     </div>
+                     </div>
+                	</div>
+               	</div>     
+              	    
+                <div class="row" align="center">
+                    	 <div class="checkbox c-checkbox c-checkbox-rounded">
+                        <label>
+                           <input id="roundedcheckbox20" type="checkbox" />
+                           <span class="fa fa-check"></span><strong>Stay Logged In</strong></label>
+                     </div>
+                        
+                       <!-- <div class="checkbox c-checkbox c-checkbox-rounded">
+                        <label>
+                           <input id="roundedcheckbox10" type="checkbox" checked="checked" />
+                           <span class="fa fa-check"></span>Lorem</label>
+                     </div> -->
+                        
+               	</div>
+                
+                <div class="row" align="center">
+                  	<div col-md-4><button style="width:150px;" type="submit" class="btn btn-block btn-info mb">Login</button></div>
+                    <div class="text-center mt"><a ui-sref="page.recover" class="text-muted">Forgot Your Password?</a></div>
+                </div>
+                <br><br>
+                
+                <div class="row" align="center">
+                <p class="mb0">Don't have an account yet?</p>
+                <div dropdown="dropdown" class="btn-group mr">
+                        <button dropdown-toggle="" class="btn btn-default dropdown-toggle btn-inverse">Create A New Account&nbsp;<b class="caret"></b>
+                        </button>
+                        <ul role="menu" class="dropdown-menu animated flipInY" style="width:220px; margin:0 0 0 -20px;">
+                           <li><div style="font-size:15px; margin:5px 0 5px 10px;"><em class="fa fa-truck" style="padding-right:10px;"> </em> <a ui-sref="page.registertrucker"><strong> I am a Truck Operator</strong></a></div>
+                           </li>
+                           <li><div style="font-size:15px; margin:5px 0 5px 10px;"><em class="fa fa-user" style="padding-right:12px;"> </em> <a ui-sref="page.registershipper"><strong> I am a Shipper</strong></a></div>
+                           </li>
+                           <li><div style="font-size:15px; margin:5px 0 5px 10px;"><em class="fa fa-user" style="padding-right:12px;"> </em> <a ui-sref="page.paymentsetup"><strong> Payment Setup</strong></a></div>
+                           </li>
+                           
+                        </ul>
+                     </div>
+                	<!--<a ui-sref="page.register" class="btn btn-block btn-default" style="width:250px;" ><strong>Create New Account</strong></a> -->
+                </div>
+                    	
+                
+                  
+                
+            </form>
+         </div>
+      </div>
+     
+      
+      <!-- END panel-->
+      <div ng-include="'views/page.footer.html'" class="p-lg text-center"></div>
+   </div>
+</div>

@@ -1,0 +1,387 @@
+<div class="container animated fadeInDown">
+<img src="img/logo.png" alt="Load Post" class="center-block" />
+<div class="panel radius-15" style="text-align:center; margin:0 auto;">
+
+	<!-- START panel-->
+	<div class="panel panel-inverse radius-15">
+   <div class="pagetitle roundedtop">I'm A Truck Operator!  &nbsp;&nbsp;Let's Get Rollin'!</div>
+   <div class="panel-body">
+      <div ng-init="activeStep=1" class="wizard">
+         <ul class="steps-bar">
+            <li ng-class="{'active':activeStep&gt;=1}">
+               <span style="font-size:12px; font-weight:bold;">The Basics</span>
+            </li>
+            <li ng-class="{'active':activeStep&gt;=2}">
+               <span style="font-size:12px; font-weight:bold;">Preferences</span>
+            </li>
+            
+            
+         </ul>
+          </div>
+          <hr>
+          		
+         	<!--Step 1 -->	
+ 			<div ng-show="activeStep==2" class="wizard-step">
+         	<div class="col-md-10 col-centered">
+            	<div class="sectionbox1">
+            		<div class="sectiontitle">The  Basics</div>
+            		<div class="sectiontext" style="padding-left:15px;">As a truck operator wanting to transport loads, we need you to tell us a little bit about yourself.</div>
+                </div>
+            </div>
+            
+            <form name="form_step1" class="form-validate">
+            
+            <div class="row">
+            		<div class="col-md-12">
+                  		<div class="col-md-6 col-centered">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="company" type="text" placeholder="Your Company*" autocomplete="off"  class="form-control" autofocus required />
+                      		</div>
+                    	</div>
+                    </div>
+          	</div>
+            
+            <div class="row">        
+                    <div class="col-md-12">
+                    	<div class="col-md-2"></div>
+                  		<div class="col-md-4">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="firstname" type="text" placeholder="First Name*" autocomplete="off"  class="form-control" required />
+                     		</div>
+                    	</div>
+                        
+                    	<div class="col-md-4">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="lastname" type="text" placeholder="Last Name*" autocomplete="off" class="form-control" required/>
+                         	</div>
+                     	</div>
+                	</div>
+        	</div>
+            
+            <div class="row">
+                    <div class="col-md-12">
+                    	<div class="col-md-2"></div>
+                  		<div class="col-md-6">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="address" type="text" placeholder="Street Address*" autocomplete="off"  class="form-control" required/>
+                     		</div>
+                    	</div>
+                        
+                        <div class="col-md-2">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="suite" type="text" placeholder="Suite/Apt." autocomplete="off"  class="form-control"/>
+                     		</div>
+                    	</div>
+                        
+                    	
+                	</div>
+            </div>
+            
+            <div class="row">  
+                    <div class="col-md-12">
+                    <div class="col-md-2"></div>
+                    	<div class="col-md-3">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="city" type="text" placeholder="City*" autocomplete="off" class="form-control" required/>
+                         	</div>
+                     	</div>
+                        
+                  		<div class="col-md-3">
+                     		<select class="form-control mb" id="state">
+								<option value="" selected>State</option>
+    <option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
+	<option value="WY">Wyoming</option>
+							</select>	
+                     		
+                    	</div>
+                        
+                        <div class="col-md-2">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="zip" type="text" style="padding-right:5px;" placeholder="Zip Code*" name="zip" autocomplete="off" class="form-control" ng-model="form.minmaxlen" ng-minlength="5" ng-maxlength="5" required/>
+                         	</div>
+                     	</div>
+                	</div>
+            </div>
+            
+            <div class="row">
+            	<div class="col-md-12">
+                <div class="col-md-2"></div>
+                  		<div class="col-md-5">
+                     		<div class="form-group has-feedback mb">
+                        		<input id="login" type="email" placeholder="E-Mail*" autocomplete="off"  class="form-control" required ng-model="form.email"/>
+                        		<span class="fa fa-envelope form-control-feedback text-muted"></span>
+                     		</div>
+                    	</div>
+                    	
+                        <div class="col-md-3">
+                     		<div class="form-group has-feedback mb">
+                        		<input style="padding:0 0 0 20px;" id="telephone" type="text" name="masked" ui-mask="(999) 999-9999" ng-model="aa" placeholder="(###) ###-####" required class="form-control"/>
+                                <span class="fa fa-phone form-control-feedback text-muted"></span>
+                         	</div>
+                     	</div>
+                        
+                	</div>
+            </div>
+            
+            <hr>
+            
+            <div class="row">        
+            	<div class="col-md-12">
+                    	<div class="form-group has-feedback mb col-md-3 col-centered">
+                     		<input id="screenname" type="text" placeholder="Screen Name" autocomplete="off" class="form-control" required tooltip="At Least 6 Characters" tooltip-trigger="focus" tooltip-placement="top" ng-model="form.minvalue" ng-minlength="6"/>
+                     	</div> 
+                    </div>
+            </div>
+                    
+            <div class="row">         
+                <div class="col-md-12">
+                    	<div class="col-md-4 col-centered">
+                        <!--You will have one of these 2 divs appear real time to indicate that the screen name is available or taken (2 divs below) -->
+                     		<div class="alert alert-success">Great Pick!  Your Username is Available.</div>
+                            <div class="alert alert-danger">Sorry, That Username Taken.  Try Again.</div>
+            			</div>
+                    </div> 
+            </div>
+                    
+            <div class="row">                 
+                <div class="col-md-12">
+                    	<div class="col-md-6 col-centered mb">
+                        	<div class="form-group has-feedback col-md-6">
+                        	 <input id="password" type="password" ng-model="form.match1" class="form-control" placeholder="Password*" autocomplete="off" required/> 
+                            </div>
+                     	
+                     		<div class="form-group has-feedback col-md-6 mb">
+                        	<input id="passwordconfirm" style="padding-right:10px;" type="password" name="confirm_match" required ng-model="form.match2" ui-validate="'$value==form.match1'" ui-validate-watch="'validator.match1'" class="form-control" placeholder="Confirm Password*"/> 
+                            </div>
+                     	</div>
+                  	</div>
+            </div>
+                    
+            <div class="row">     
+               	<div class="col-md-12">
+                		<p ng-show="form_step1.confirm_match.$error.validator" class="text-danger">Uh oh!  Your Passwords Do Not Match!</p>
+                    </div>
+            </div>
+                     
+            <div class="mt">
+                  <button type="submit" ng-disabled="form_step1.$invalid" ng-click="activeStep=2" class="btn btn-primary">Next</button>
+               	</div>
+            </form>
+         </div>
+         	
+            <!--Step 2 -->
+            <div ng-show="activeStep==1" class="wizard-step">
+            <div class="col-md-10 col-centered">
+            	<div class="sectionbox2">
+            		<div class="sectiontitle">Welcome Aboard!</div>
+                	<div class="sectiontext">It's time to set your preferences to make things go faster!</div>
+                </div>
+            </div><br>
+         <form name="form_step2" class="form-validate">
+           
+           	<div class="row" style="padding-bottom:10px;">
+           		<div class="col-md-8 col-centered">
+                	<div class="col-7 body-text-title pull-left" style="text-align:right;">
+                    Default View for Available Loads
+                    </div>
+                
+                	<div class="col-5 pull-left" style="text-align:left; padding-left:10px;">
+                		<div class="radio-inline c-radio">
+                        <label>
+                           <input id="map" type="radio" name="carrierView" value="map" checked="checked" />
+                           <span class="fa fa-circle"></span>Map</label>
+                  </div>
+                   		<div class="radio-inline c-radio">
+                        <label>
+                           <input id="grid" type="radio" name="carrierView" value="grid" />
+                           <span class="fa fa-circle"></span>Grid</label>
+                  </div>
+                	</div>
+                </div>
+           </div>     
+          	
+           	<div class="row" style="padding-bottom:20px;">
+            	<div class="col-md-8 col-centered">
+                	<div class="col-4 body-text-title pull-left" style="text-align:right; padding-top:10px;">
+                    	Home Base </div>
+                
+                	<div class="col-2 pull-left" style="text-align:left; padding-left:10px;">
+                		<input id="homebase" name="homebase" type="text" style="padding-right:5px;" ng-model="form.maxlen" ng-maxlength="5" placeholder="Home Base" autocomplete="off" class="form-control" required />
+                	</div>
+                    
+                    <div class="col-6 pull-left" style="text-align:left; padding:12px 0 0 10px;">
+                		<div class="body-text">City, State filters here.</div>
+                	</div>
+                </div>
+           </div>  
+           
+           	<div class="row" style="padding-bottom:10px;">
+            	<div class="col-md-12 col-centered">
+                	<div class="col-5 body-text-title pull-left" style="text-align:right;">
+                    	Preferred Destinations </div>
+                
+                	<div class="col-7 pull-left" style="text-align:left; padding-left:10px;">
+                		
+                  
+                     <div class="radio-inline c-radio">
+                        <label>
+                           <input id="carrierloadsview" type="radio" name="i-radio" value="carrierview-state" checked="checked" />
+                           <span class="fa fa-circle"></span>By State</label></div>
+                     <div class="radio-inline c-radio">
+                        <label>
+                           <input id="carrierloadsview" type="radio" name="i-radio" value="carrierview-region" />
+                           <span class="fa fa-circle"></span>By Region</label></div>
+                     <div class="radio-inline c-radio">
+                        <label>
+                           <input id="carrierloadsview" type="radio" name="i-radio" value="carrierview-local" />
+                           <span class="fa fa-circle"></span>Local Loads Only</label></div>
+                     
+                	</div>
+            	</div>
+           </div>
+           
+           	<div class="row" style="padding-bottom:10px;">
+            	<div class="col-md-8 col-centered">
+                	<div class="col-6 body-text-title pull-left" style="text-align:right; padding-top:10px;">
+                    	Maximum Weight </div>
+                
+                	<div class="col-2 pull-left has-feedback mb" style="text-align:left; padding-left:10px;">
+                		<input id="maxweight" type="text" style="padding:0 5px 0 10px;" placeholder="MAX Weight" autocomplete="off" class="form-control" required />
+                	</div>
+                </div>
+           </div>
+           
+           	<div class="row" style="padding-bottom:20px;">
+            	<div class="col-md-8 col-centered">
+                	<div class="col-4 body-text-title pull-left" style="text-align:right; padding-top:10px;">
+                    	Maximum Load Dimensions </div>
+                
+                	<div class="col-8 pull-left" style="text-align:left; padding-left:10px;">
+                		<div class="col-3 pull-left has-feedback mb" style="padding-top:10px;"><input id="maxlength" name="maxlength" type="text" style="padding:0 5px 0 15px; width:100px;" placeholder="L (Inches)" autocomplete="off" class="form-control" required /> 
+                        </div>
+                        
+                        <div class="col-1 pull-left body-text" style="padding:20px 5px 5px 5px;">
+                        X </div>
+                        
+                        <div class="col-3 pull-left has-feedback mb" style="padding-top:10px;"><input id="maxwidth" name="maxwidth" type="text" style="padding:0 5px 0 15px; width:100px;" placeholder="W (Inches)" autocomplete="off" class="form-control" required /> </div>
+                        
+                        <div class="col-1 pull-left body-text" style="padding:20px 5px 5px 5px;">
+
+                        X </div>                        
+                        <div class="col-3 pull-left" style="padding-top:10px;"><input id="maxheight" name="maxheight" type="text" style="padding:0 5px 0 15px; width:100px;" placeholder="H (Inches)" autocomplete="off" class="form-control" required /></div>
+                        
+                	</div>
+                </div>
+           </div>
+           
+      <div class="row" style="padding-bottom:20px;">
+        <div class="panel panel-ltgray col-9 col-centered">
+         <div class="panel-heading"><div class="sub-sectiontitle">Equipment Types</div>
+         
+         </div>
+         <div class="panel-body" style="display:inline-block; text-align:left;">
+         
+         	<div class="checkbox-inline c-checkbox" style="width:140px; margin-left:10px;"><label><input id="carhauler" type="checkbox" value="carhauler" /><span class="fa fa-check"></span>Car Hauler</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="containerhauler" type="checkbox" value="containerhauler" /><span class="fa fa-check"></span>Container Hauler</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="dryvan" type="checkbox" value="dryvan" /><span class="fa fa-check"></span>Dry Van</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="flatbed" type="checkbox" value="flatbed" /><span class="fa fa-check"></span>Flatbed</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="gooseneck" type="checkbox" value="gooseneck" /><span class="fa fa-check"></span>Gooseneck</label></div>
+         	<div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="heavyhauler" type="checkbox" value="heavyhauler" /><span class="fa fa-check"></span>Heavy Hauler</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="lowboy" type="checkbox" value="lowboy" /><span class="fa fa-check"></span>Lowboy</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="reefer" type="checkbox" value="reefer" /><span class="fa fa-check"></span>Reefer</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="rgn" type="checkbox" value="rgn" /><span class="fa fa-check"></span>RGN</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="stepdeck" type="checkbox" value="stepdeck" /><span class="fa fa-check"></span>Step Deck</label></div>
+         			
+         
+           </div>
+          </div> 
+      	</div>
+        
+      <div class="row" style="padding-bottom:20px;">
+        <div class="panel panel-ltgray col-9 col-centered">
+         <div class="panel-heading"><div class="sub-sectiontitle">Load Requirement Capabilities</div>
+         
+         </div>
+         <div class="panel-body" style="display:inline-block; text-align:left;">
+         
+         	<div class="checkbox-inline c-checkbox" style="width:140px; margin-left:10px;"><label><input id="airride" type="checkbox" value="airride" /><span class="fa fa-check"></span>Air Ride</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="chains" type="checkbox" value="chains" /><span class="fa fa-check"></span>Chains</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="coilracks" type="checkbox" value="coilracks" /><span class="fa fa-check"></span>Coil Racks</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="dunnage" type="checkbox" value="dunnage" /><span class="fa fa-check"></span>Dunnage</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="hazmat" type="checkbox" value="hazmat" /><span class="fa fa-check"></span>Hazmat</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="pipestakes" type="checkbox" value="pipestakes" /><span class="fa fa-check"></span>Pipe Stakes</label></div>
+            <div class="checkbox-inline c-checkbox" style="width:140px;"><label><input id="tarps" type="checkbox" value="tarps" /><span class="fa fa-check"></span>Tarps</label></div>
+          </div>
+         </div> 
+      	</div>
+          	
+            
+            
+           
+      
+            <div class="mt">
+              <button type="button" ng-click="activeStep=1" class="btn btn-default">Prev</button>
+              <button type="button" ng-disabled="form_step2.$invalid" ng-click="stepsDone=true" class="btn btn-primary">Finish</button>
+            </div>
+            </form>
+         
+         
+         
+         
+      </div>
+      
+
+   </div>
+</div>
+</div>
+</div>
+

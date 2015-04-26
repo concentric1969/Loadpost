@@ -1,0 +1,49 @@
+<div class="container container-med animated fadeInDown">
+   <div class="center-block mt-xl">
+      <!-- START panel-->
+      <img src="img/logo.png" alt="Image" class="center-block img-rounded" />
+      <div class="panel">
+         <div class="panel-body">
+            <p class="pv text-bold" align="center">YOUR CREDIT CARD</p>
+            
+            <form name="form_step1" class="form-validate">
+            	<div class="card-wrapper"></div><br>
+					<div class="form-container active">
+                <div class="row">        
+                    <div class="col-md-12">
+                    	<div class="col-md-1"></div>
+                        
+                  		<div class="col-md-3">
+                     		<div class="form-group has-feedback mb">
+                        		<input  placeholder="Card Number" type="text" name="number" autocomplete="off"  class="form-control" required />
+                     		</div>
+                    	</div>
+                        
+                    	<div class="col-md-3">
+                     		<div class="form-group has-feedback mb">
+                        		<input placeholder="Full Name" type="text" name="name" autocomplete="off" class="form-control" required />
+                         	</div>
+                     	</div>
+                        
+                        <div class="col-md-2">
+                     		<div class="form-group has-feedback mb">
+                        		<input placeholder="MM/YY" type="text" name="expiry" autocomplete="off" class="form-control" required />
+                         	</div>
+                     	</div>
+                        
+                        <div class="col-md-2">
+                     		<div class="form-group has-feedback mb">
+                        		<input placeholder="CVC" type="text" name="cvc" autocomplete="off" class="form-control" required />
+                         	</div>
+                     	</div>
+                	</div>
+        		</div>
+            	</div>
+    		</form>
+            <script>new Card({form: document.querySelector('form'),container: '.card-wrapper'});</script>
+         </div>
+      </div>
+      <!-- END panel-->
+      <div ng-include="'views/page.footer.html'" class="p-lg text-center"></div>
+   </div>
+</div>

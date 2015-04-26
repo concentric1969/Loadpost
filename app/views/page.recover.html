@@ -1,0 +1,35 @@
+<div class="container container-sm animated fadeInDown">
+   <div class="center-block mt-xl">
+      <!-- START panel-->
+      <img src="img/logo-gray.png" alt="Image" class="center-block img-rounded" />
+      <div class="panel radius-15">
+         <div class="panel-body">
+            <p class="pv">
+            	<div class="sectionbox1">
+            		<div class="sectiontitle">Reset My Password</div>
+               	</div>
+               <br/>
+               <div class="body-text text-center">Please enter your registered email address below to reset your password.</div></p>
+            <form role="form">
+               <div class="row">
+                  <div class="col-md-8">
+                     <div class="form-group has-feedback">
+                        <input id="resetInputEmail1" type="email" placeholder="Your Registered E-Mail" autocomplete="off" class="form-control" autofocus />
+                        <span class="fa fa-lock form-control-feedback text-muted"></span>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                  </div>  
+                  </div>
+                     <div class="alert alert-success text-center">You Have Successfully Reset Your Password.  <br>An e-mail has been sent to your registered address.</div>
+                     <div class="alert alert-danger text-center">Sorry, that e-mail address is not a valid e-mail address.  <br>Enter Another E-Mail Address.</div>
+                  
+               
+            </form>
+         </div>
+      </div>
+      <!-- END panel-->
+      <div ng-include="'views/page.footer.html'" class="p-lg text-center"></div>
+   </div>
+</div>
