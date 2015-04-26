@@ -21,7 +21,7 @@
           <hr>
           		
          	<!--Step 1 -->	
- 			<div ng-show="activeStep==2" class="wizard-step">
+ 			<div ng-show="activeStep==1" class="wizard-step">
          	<div class="col-md-10 col-centered">
             	<div class="sectionbox1">
             		<div class="sectiontitle">The  Basics</div>
@@ -219,7 +219,7 @@
          </div>
          	
             <!--Step 2 -->
-            <div ng-show="activeStep==1" class="wizard-step">
+            <div ng-show="activeStep==2" class="wizard-step">
             <div class="col-md-10 col-centered">
             	<div class="sectionbox2">
             		<div class="sectiontitle">Welcome Aboard!</div>
@@ -237,7 +237,7 @@
                 	<div class="col-5 pull-left" style="text-align:left; padding-left:10px;">
                 		<div class="radio-inline c-radio">
                         <label>
-                           <input id="map" type="radio" name="carrierView" value="map" checked="checked" />
+                           <input id="map" type="radio" name="carrierView" value="map" checked="checked"  />
                            <span class="fa fa-circle"></span>Map</label>
                   </div>
                    		<div class="radio-inline c-radio">
@@ -255,7 +255,7 @@
                     	Home Base </div>
                 
                 	<div class="col-2 pull-left" style="text-align:left; padding-left:10px;">
-                		<input id="homebase" name="homebase" type="text" style="padding-right:5px;" ng-model="form.maxlen" ng-maxlength="5" placeholder="Home Base" autocomplete="off" class="form-control" required />
+                		<input id="homebase" name="homebase" type="text" style="padding:0 10px 0 15px;" ng-model="form.maxlen" ng-maxlength="5" placeholder="Home Base" autocomplete="off" class="form-control" required />
                 	</div>
                     
                     <div class="col-6 pull-left" style="text-align:left; padding:12px 0 0 10px;">
@@ -266,23 +266,17 @@
            
            	<div class="row" style="padding-bottom:10px;">
             	<div class="col-md-12 col-centered">
-                	<div class="col-5 body-text-title pull-left" style="text-align:right;">
-                    	Preferred Destinations </div>
-                
-                	<div class="col-7 pull-left" style="text-align:left; padding-left:10px;">
-                		
-                  		<div class="radio-inline c-radio">
-                        <label>
-                           <input id="carrierloadsview" type="radio" name="i-radio" value="0" onclick="showhidediv(this);" />
-                           <span class="fa fa-circle"></span>Local Radius</label></div>
-                     	<div class="radio-inline c-radio">
-                        <label>
-                           <input id="carrierloadsview" type="radio" name="i-radio" value="1" onclick="showhidediv(this);" />
-                           <span class="fa fa-circle"></span>By State</label></div>
-                     	<div class="radio-inline c-radio">
+                	<div class="col-5 body-text-title pull-left" style="text-align:right;">Preferred Destinations </div>
+                		<div class="col-7 pull-left" style="text-align:left; padding-left:10px;">
+                			<div class="radio-inline c-radio">
+                        		<label><input id="carrierloadsview" type="radio" name="i-radio" value="0" onclick="showhidediv(this);" /><span class="fa fa-circle"></span>Local Radius</label>
+                           	</div>
+                     		<div class="radio-inline c-radio">
+                        		<label><input id="carrierloadsview" type="radio" name="i-radio" value="1" onclick="showhidediv(this);" /><span class="fa fa-circle"></span>By State</label></div>
+                     	<!--<div class="radio-inline c-radio">
                         <label>
                            <input id="carrierloadsview" type="radio" name="i-radio" value="2" onclick="showhidediv(this);" />
-                           <span class="fa fa-circle"></span>By Region</label></div>
+                           <span class="fa fa-circle"></span>By Region</label></div> -->
                      
                     </div>
                     
@@ -290,18 +284,79 @@
            </div>
            
            		<!--Hidden DIVs go here -->
-           	<div id="radius" class="col-10 col-centered" style="display:none;">
-           	 	<p class="clearfix">
-      				<span class="pull-left">Miles Radius</span>
-      				<span class="pull-right">Miles:{{range.min}} - {{range.max}}</span>
-            	</p>
-   				<slider ng-model="range.min" ng-model-range="range.max" floor="1" ceiling="100"></slider>
+           	<div id="radius" style="display:none;">
+            	<div class="body-text" style="color:#C00;">Check All That Apply</div>
+             	<div class="panel-body" style="display:inline-block; text-align:left;">
+         			
+                    <div class="checkbox-inline c-checkbox radius"><label><input id="upto25miles" type="checkbox" value="upto25miles" /><span class="fa fa-check"></span>Up to 25 Mile Radius</label></div>
+                    <div class="checkbox-inline c-checkbox radius"><label><input id="upto50miles" type="checkbox" value="upto50miles" /><span class="fa fa-check"></span>Up to 50 Mile Radius</label></div>
+                    <div class="checkbox-inline c-checkbox radius"><label><input id="upto100miles" type="checkbox" value="upto100miles" /><span class="fa fa-check"></span>Up to 100 Mile Radius</label></div>
+                    <div class="checkbox-inline c-checkbox radius"><label><input id="upto250miles" type="checkbox" value="upto250miles" /><span class="fa fa-check"></span>Up to 250 Mile Radius</label></div>
+                    <div class="checkbox-inline c-checkbox radius"><label><input id="upto500miles" type="checkbox" value="upto500miles" /><span class="fa fa-check"></span>Up to 500 Mile Radius</label></div>
+            </div>
             </div>
 			
-            <div id="states" style="display:none;">State</div>
-			<div id="region" style="display:none;">Region</div>
+            <div id="states" class="col-centered col-12" style="display:none;">
+            <div class="body-text" style="color:#C00;">Check All That Apply</div>
+             	<div class="panel-body" style="display:inline-block; text-align:left; height:150px; overflow:auto;">
+         			<div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="alabama" type="checkbox" value="alabama" /><span class="fa fa-check"></span>Alabama</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Alaska" type="checkbox" value="Alaska" /><span class="fa fa-check"></span>Alaska</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Arizona" type="checkbox" value="Arizona" /><span class="fa fa-check"></span>Arizona</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Arkansas" type="checkbox" value="Arkansas" /><span class="fa fa-check"></span>Arkansas</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="California" type="checkbox" value="California" /><span class="fa fa-check"></span>California</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Colorado" type="checkbox" value="Colorado" /><span class="fa fa-check"></span>Colorado</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Arkansas" type="checkbox" value="Arkansas" /><span class="fa fa-check"></span>Connecticut</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Deleware" type="checkbox" value="Deleware" /><span class="fa fa-check"></span>Deleware</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Florida" type="checkbox" value="Florida" /><span class="fa fa-check"></span>Florida</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Georgia" type="checkbox" value="Georgia" /><span class="fa fa-check"></span>Georgia</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Hawaii" type="checkbox" value="Hawaii" /><span class="fa fa-check"></span>Hawaii</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Idaho" type="checkbox" value="Idaho" /><span class="fa fa-check"></span>Idaho</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Illinois" type="checkbox" value="Illinois" /><span class="fa fa-check"></span>Illinois</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Indiana" type="checkbox" value="Indiana" /><span class="fa fa-check"></span>Indiana</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Iowa" type="checkbox" value="Iowa" /><span class="fa fa-check"></span>Iowa</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Kansas" type="checkbox" value="Kansas" /><span class="fa fa-check"></span>Kansas</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Kentucky" type="checkbox" value="Kentucky" /><span class="fa fa-check"></span>Kentucky</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Louisiana" type="checkbox" value="Louisiana" /><span class="fa fa-check"></span>Louisiana</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Maine" type="checkbox" value="Maine" /><span class="fa fa-check"></span>Maine</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Maryland" type="checkbox" value="Maryland" /><span class="fa fa-check"></span>Maryland</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Massachusetts" type="checkbox" value="Massachusetts" /><span class="fa fa-check"></span>Massachusetts</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Michigan" type="checkbox" value="Michigan" /><span class="fa fa-check"></span>Michigan</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Minnesota" type="checkbox" value="Minnesota" /><span class="fa fa-check"></span>Minnesota</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Mississippi" type="checkbox" value="Mississippi" /><span class="fa fa-check"></span>Mississippi</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Missouri" type="checkbox" value="Missouri" /><span class="fa fa-check"></span>Missouri</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Montana" type="checkbox" value="Montana" /><span class="fa fa-check"></span>Montana</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Nebraska" type="checkbox" value="Nebraska" /><span class="fa fa-check"></span>Nebraska</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Nevada" type="checkbox" value="Nevada" /><span class="fa fa-check"></span>Nevada</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="New Hampshire" type="checkbox" value="New Hampshire" /><span class="fa fa-check"></span>New Hampshire</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="New Jersey" type="checkbox" value="New Jersey" /><span class="fa fa-check"></span>New Jersey</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="New Mexico" type="checkbox" value="New Mexico" /><span class="fa fa-check"></span>New Mexico</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="New York" type="checkbox" value="New York" /><span class="fa fa-check"></span>New York</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="North Carolina" type="checkbox" value="North Carolina" /><span class="fa fa-check"></span>North Carolina</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="North Dakota" type="checkbox" value="North Dakota" /><span class="fa fa-check"></span>North Dakota</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Ohio" type="checkbox" value="Ohio" /><span class="fa fa-check"></span>Ohio</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Oklahoma" type="checkbox" value="Oklahoma" /><span class="fa fa-check"></span>Oklahoma</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Oregon" type="checkbox" value="Oregon" /><span class="fa fa-check"></span>Oregon</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Pennsylvania" type="checkbox" value="Pennsylvania" /><span class="fa fa-check"></span>Pennsylvania</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Rhode Island" type="checkbox" value="Rhode Island" /><span class="fa fa-check"></span>Rhode Island</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="South Carolina" type="checkbox" value="South Carolina" /><span class="fa fa-check"></span>South Carolina</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="South Dakota" type="checkbox" value="South Dakota" /><span class="fa fa-check"></span>South Dakota</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Tennessee" type="checkbox" value="Tennessee" /><span class="fa fa-check"></span>Tennessee</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Texas" type="checkbox" value="Texas" /><span class="fa fa-check"></span>Texas</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Utah" type="checkbox" value="Utah" /><span class="fa fa-check"></span>Utah</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Vermont" type="checkbox" value="Vermont" /><span class="fa fa-check"></span>Vermont</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Virginia" type="checkbox" value="Virginia" /><span class="fa fa-check"></span>Virginia</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Washington" type="checkbox" value="Washington" /><span class="fa fa-check"></span>Washington</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="West Virginia" type="checkbox" value="West Virginia" /><span class="fa fa-check"></span>West Virginia</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Wisconsin" type="checkbox" value="Wisconsin" /><span class="fa fa-check"></span>Wisconsin</label></div>
+                    <div class="checkbox-inline c-checkbox states" style="margin-left:10px;"><label><input id="Wyoming" type="checkbox" value="Wyoming" /><span class="fa fa-check"></span>Wyoming</label></div>
+                    
+                    
+            </div>
+          	</div>
+            
+			<!--<div id="region" style="display:none;">Region</div> -->
+ 
 
-           
            	<div class="row" style="padding:20px 0 10px 0;">
             	<div class="col-md-8 col-centered">
                 	<div class="col-6 body-text-title pull-left" style="text-align:right; padding-top:10px;">

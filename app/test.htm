@@ -28,7 +28,19 @@ document.getElementById('region').style.display=(rads[2].checked)?'block':'none'
 <div id="state" style="display:none;">State</div>
 <div id="region" style="display:none;">Region</div>
 
+
+<div ng-controller="SliderController" class="container-fluid">
+   
+  
+<p class="clearfix">
+     						<span class="pull-left">Range</span>
+      						<span class="pull-right">Min:{{range.min}} - Max:{{range.max}}</span>
+   					</p>
+   <slider ng-model="range.min" ng-model-range="range.max" floor="1" ceiling="100"></slider>
+  
+</div>
 </form>	
+
     
 </body>
 

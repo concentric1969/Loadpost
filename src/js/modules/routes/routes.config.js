@@ -13,19 +13,19 @@
     function routesConfig($stateProvider, $urlRouterProvider, Route) {
 
       // Default route
-       $urlRouterProvider.otherwise('/app/dashboard');
-	 //$urlRouterProvider.otherwise('/page/login');
+      // $urlRouterProvider.otherwise('/app/dashboard');
+	 $urlRouterProvider.otherwise('/page/login');
 
       // Application Routes States
       $stateProvider
-	      .state('app', {
-          url: '/app',
-          abstract: true,
-          templateUrl: Route.base('app.html'),
-          //.state('login', {
-          //url: '/login',
+	      //.state('app', {
+          //url: '/app',
           //abstract: true,
-          //templateUrl: Route.base('login.html'),
+          //templateUrl: Route.base('app.html'),
+          .state('login', {
+          url: '/login',
+          abstract: true,
+          templateUrl: Route.base('login.html'),
           resolve: {
             _assets: Route.require('icons', 'screenfull', 'sparklines', 'slimscroll', 'toaster', 'animate')
           }
